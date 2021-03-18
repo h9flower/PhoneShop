@@ -1,7 +1,9 @@
 import VueRouter from 'vue-router'
 import Home from './pages/homePage'
-import Shop from './pages/shop'
+import Apple from './pages/apple'
+import Samsung from './pages/samsung'
 import Authorization from './pages/authorization'
+import Basket from './pages/bascket'
 
 export default new VueRouter({
   mode: 'history',
@@ -11,12 +13,20 @@ export default new VueRouter({
       component: Home
     },
     {
-      path: '/shop',
-      component: Shop
+      path: '/apple',
+      component: Apple
+    },
+    {
+      path: '/samsung',
+      component: Samsung
     },
     {
       path: '/authorization',
       component: Authorization
+    },
+    {
+      path: '/basket',
+      component: Basket
     }
   ]
 })
