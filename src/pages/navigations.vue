@@ -1,7 +1,13 @@
 <template>
   <div>
-    <b-navbar type="dark" variant="dark" class="justify-content-between">
+    <b-navbar
+      type="dark"
+      variant="dark"
+      class="justify-content-between align-items-center"
+    >
       <b-navbar-nav>
+        <router-link tag="b-nav-item" to="/"><h5>Logo</h5></router-link>
+
         <router-link tag="b-nav-item" to="/">Главная</router-link>
 
         <b-nav-item-dropdown text="Смартфоны">

@@ -4,6 +4,7 @@ import Apple from './pages/apple'
 import Samsung from './pages/samsung'
 import Authorization from './pages/authorization'
 import Basket from './pages/bascket'
+import Registration from './pages/registration'
 
 export default new VueRouter({
   mode: 'history',
@@ -13,7 +14,7 @@ export default new VueRouter({
       component: Home
     },
     {
-      path: '/apple',
+      path: "/apple",
       component: Apple
     },
     {
@@ -27,6 +28,10 @@ export default new VueRouter({
     {
       path: '/basket',
       component: Basket
+    },
+    {
+      path: '/registration',
+      component: Registration
     }
   ]
 })

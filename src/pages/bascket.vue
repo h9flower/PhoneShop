@@ -77,25 +77,9 @@ export default {
       this.$router.go(-1);
     },
 
-    // deletePhone(id) {
-    //   selectPhones = selectPhones.map((el) => {
-    //     if (el.id === id) {
-    //       delete id;
-    //     }
-    //   });
-    // },
-
     deletePhone(todo) {
       this.$store.commit("deletePhone", todo);
     },
-
-    //  minusProduct(state, iDs) {
-    //   state.cards = state.cards.map((el) => {
-    //     if (el.id === iDs) {
-    //       el.quantity = el.quantity - 1;
-    //     }
-    //     return el;
-    //   })
   },
 
   computed: {

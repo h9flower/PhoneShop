@@ -35,25 +35,43 @@
               id="password"
               placeholder="Пароль"
             />
-            <div v-if="!$v.formReg.password.required" class="invalid-feedback">
-              Пожалуйста введите пароль
+            <div v-if="!$v.formReg.password.minLength" class="invalid-feedback">
+              Пароль должен быть не меньше 6 символов
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword2">Повторите пароль</label>
+            <input
+              :class="{ 'is-invalid': $v.formReg.confirmPassword.$error }"
+              @blur="$v.formReg.confirmPassword.$touch()"
+              v-model="formReg.confirmPassword"
+              type="password"
+              class="form-control"
+              id="confirmPassword"
+              placeholder="Пароль"
+            />
+            <div
+              v-if="!$v.formReg.confirmPassword.sameAs"
+              class="invalid-feedback"
+            >
+              Пароли не совпадают
             </div>
           </div>
 
           <router-link to="/">
             <button
               :disabled="
-                $v.formReg.mail.$error || !$v.formReg.password.required
+                $v.formReg.mail.$error ||
+                !$v.formReg.password.required ||
+                !$v.formReg.confirmPassword.sameAs
               "
               type="submit"
               class="btn btn-primary"
             >
-              Войти
+              Зарегистрироваться
             </button>
           </router-link>
-          <router-link class="ml-3" to="/registration"
-            >Зарегистрироваться</router-link
-          >
         </form>
       </div>
     </div>
@@ -62,7 +80,7 @@
 
 <script>
 import navigations from "@/pages/navigations.vue";
-import { required, email } from "vuelidate/lib/validators";
+import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
 
 export default {
   data() {
@@ -70,6 +88,7 @@ export default {
       formReg: {
         mail: "",
         password: "",
+        confirmPassword: "",
       },
     };
   },
@@ -81,7 +100,8 @@ export default {
   validations: {
     formReg: {
       mail: { required, email },
-      password: { required },
+      password: { required, minLength: minLength(6) },
+      confirmPassword: { sameAs: sameAs("password") },
     },
   },
 };

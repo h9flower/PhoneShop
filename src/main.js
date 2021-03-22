@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Vuelidate from 'vuelidate'
 import App from './App.vue'
 
 import VueRouter from 'vue-router'
@@ -13,9 +14,11 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(Vuelidate)
 
 new Vue({
   render: h => h(App),
   router,
-  store
+  store,
+  Vuelidate
 }).$mount('#app')
