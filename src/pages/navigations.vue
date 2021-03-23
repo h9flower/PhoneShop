@@ -32,7 +32,7 @@
           </b-icon
         ></router-link>
 
-        <router-link tag="b-nav-item" to="/authorization" right
+        <router-link tag="b-nav-item" to="/login" right
           >Авторизация</router-link
         >
       </b-navbar-nav>

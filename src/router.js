@@ -1,16 +1,21 @@
 import VueRouter from 'vue-router'
+import Welcome from './pages/Welcome'
 import Home from './pages/homePage'
 import Apple from './pages/apple'
 import Samsung from './pages/samsung'
-import Authorization from './pages/authorization'
+import Login from './pages/login'
 import Basket from './pages/bascket'
-import Registration from './pages/registration'
+import Regist from './pages/regist'
 
 export default new VueRouter({
   mode: 'history',
   routes: [
     {
       path: '',
+      component: Welcome
+    },
+    {
+      path: '/home',
       component: Home
     },
     {
@@ -22,16 +27,16 @@ export default new VueRouter({
       component: Samsung
     },
     {
-      path: '/authorization',
-      component: Authorization
+      path: '/login',
+      component: Login
     },
     {
       path: '/basket',
       component: Basket
     },
     {
-      path: '/registration',
-      component: Registration
+      path: '/regist',
+      component: Regist
     }
   ]
 })

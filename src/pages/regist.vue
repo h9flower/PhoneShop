@@ -1,6 +1,5 @@
 <template>
   <div>
-    <navigations />
     <div class="row mt-5">
       <div class="col-sm-3 mx-auto">
         <form novalidate>
@@ -79,7 +78,6 @@
 </template>
 
 <script>
-import navigations from "@/pages/navigations.vue";
 import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
 
 export default {
@@ -91,10 +89,6 @@ export default {
         confirmPassword: "",
       },
     };
-  },
-
-  components: {
-    navigations,
   },
 
   validations: {

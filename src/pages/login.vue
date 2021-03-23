@@ -51,7 +51,7 @@
               Войти
             </button>
           </router-link>
-          <router-link class="ml-3" to="/registration"
+          <router-link class="ml-3" to="/regist"
             >Зарегистрироваться</router-link
           >
         </form>
@@ -61,7 +61,6 @@
 </template>
 
 <script>
-import navigations from "@/pages/navigations.vue";
 import { required, email } from "vuelidate/lib/validators";
 
 export default {
@@ -72,10 +71,6 @@ export default {
         password: "",
       },
     };
-  },
-
-  components: {
-    navigations,
   },
 
   validations: {
